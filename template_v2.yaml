@@ -1,5 +1,5 @@
-name: sample4
-version: '1.0.0'
+name: sample4/test
+version: '1.1.0'
 description: SD that prints a line
 maintainer: aishwaryanair.mec@gmail.com
 config:
