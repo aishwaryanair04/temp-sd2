@@ -1,0 +1,17 @@
+shared:
+  image: docker.ouroath.com:4443/docker.io/node:18
+  environment:
+    SD_TEMPLATE_PATH: ./template_v2.yaml
+jobs:
+  validate_template:
+    requires: [~pr, ~commit]
+    steps:
+      - install_prerequisites: npm install -g screwdriver-template-main
+      - validate_template: template-validate
+
+  publish_template:
+    requires: [validate_template]
+    steps:
+      - install_prerequisites: npm install -g screwdriver-template-main
+      - publish: template-publish
+      - autotag: template-tag --name sample3 --tag latest
