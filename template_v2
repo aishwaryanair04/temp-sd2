@@ -1,0 +1,8 @@
+name: sample4
+version: '1.0.0'
+description: SD that prints a line
+maintainer: aishwaryanair.mec@gmail.com
+config:
+  image: docker.ouroath.com:4443/docker.io/node:18
+  steps:
+    - printLine: echo "Testing template creation V4"
